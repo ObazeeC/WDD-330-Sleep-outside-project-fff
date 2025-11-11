@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sleep Outside | Product Detail</title>
+    <title>Sleep Outside | Products</title>
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
@@ -13,20 +13,11 @@
     </div></header>
 
     <main class="wrap">
-      <a class="back" id="back-to-category" href="/product_listing/index.html">&larr; Back to products</a>
-      <section class="detail">
-        <div>
-          <img id="product-img" src="" alt="" loading="eager"/>
-        </div>
-        <div>
-          <h1 id="product-name"></h1>
-          <p class="price" id="product-price"></p>
-          <p id="product-description"></p>
-        </div>
-      </section>
+      <h2 id="list-title">Top Products</h2>
+      <ul class="product-list grid" aria-live="polite"></ul>
     </main>
 
     <footer><div class="wrap">&copy; <span id="year"></span> Sleep Outside</div></footer>
-    <script type="module" src="/js/product.js"></script>
+    <script type="module" src="/js/product-listing.js"></script>
   </body>
 </html>

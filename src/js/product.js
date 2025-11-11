@@ -1,25 +1,21 @@
-import ProductData from './ProductData.mjs';
-import { getParam } from './utils.mjs';
-import ProductDetails from './ProductDetails.mjs';
+import ProductData from './ProductData.mjs'
+import { getParam } from './utils.mjs'
 
-const dataSource = new ProductData('tents');
-const productId = getParam('product')
+const id = getParam('product')
+const category = getParam('category') || 'tents'
+const dataSource = new ProductData()
+const product = await dataSource.findProductById(id)
 
-const product = new ProductDetails(productId,dataSource);
-product.init();
+const nameEl = document.getElementById('product-name')
+const imgEl = document.getElementById('product-img')
+const priceEl = document.getElementById('product-price')
+const descEl = document.getElementById('product-description')
+const backLink = document.getElementById('back-to-category')
 
-//async function addToCartHandler(e) {
- // e?.preventDefault?.();
- // const id = e?.target?.dataset?.id;
- // if (!id) return console.warn('Missing data-id on Add to Cart button');
+nameEl.textContent = product?.Name ?? 'Product'
+imgEl.src = product?.Images?.PrimaryLarge || product?.Images?.PrimaryMedium || ''
+imgEl.alt = product?.Name ?? 'Product image'
+priceEl.textContent = product?.FinalPrice ? `$${Number(product.FinalPrice).toFixed(2)}` : ''
+descEl.textContent = product?.Description ?? ''
 
-//   const product = await dataSource.findProductById(id);
-//  if (!product) return console.warn('No product found for id:', id);
-
-//   addProductToCart(product);
-// }
-
-// document
- //  .getElementById('addToCart')
- //  ?.addEventListener('click', addToCartHandler);
-
+if (backLink) backLink.href = `/product_listing/index.html?category=${encodeURIComponent(category)}`
