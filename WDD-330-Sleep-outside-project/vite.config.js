@@ -2,10 +2,13 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  // the src folder is your working directory
+  // The src folder is your working directory
   root: "src/",
 
-  // everything inside /src/public will automatically copy to dist
+  // Makes all paths relative so it works on Netlify and local preview
+  base: "./",
+
+  // Everything inside /src/public will automatically copy to dist
   publicDir: "public",
 
   build: {
@@ -17,7 +20,7 @@ export default defineConfig({
         cart: resolve(__dirname, "src/cart/index.html"),
         checkout: resolve(__dirname, "src/checkout/index.html"),
 
-        // ✅ NEW: one shared product page replaces the 4 old ones
+        // ✅ Shared product page replaces multiple old ones
         product: resolve(__dirname, "src/product_pages/index.html"),
       },
     },

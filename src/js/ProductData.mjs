@@ -9,8 +9,9 @@ function convertToJson(res) {
 export default class ProductData {
   constructor(category) {
     this.category = category;
-    this.path = `/src/public/json/${this.category}.json`;
+    this.path = `/json/${this.category}.json`; // ✅ Ruta válida en Netlify
   }
+  
   getData() {
     return fetch(this.path)
       .then(convertToJson)
