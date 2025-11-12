@@ -1,5 +1,7 @@
 import ProductData from './ProductData.mjs';
 
+import "../css/style.css";
+
 import ProductList from './ProductList.mjs';
 
 import { loadHeaderFooter } from './utils.mjs';

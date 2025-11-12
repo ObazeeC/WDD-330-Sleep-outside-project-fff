@@ -2,6 +2,7 @@ import ProductData from "./ProductData.mjs";
 import { getParam } from "./utils.mjs";
 import ProductDetails from "./ProductDetails.mjs";
 import { loadHeaderFooter } from "./utils.mjs";
+import "../css/style.css";
 
 const dataSource = new ProductData("tents");
 const productId = getParam("product");
