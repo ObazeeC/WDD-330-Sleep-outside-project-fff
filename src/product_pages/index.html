@@ -1,32 +1,52 @@
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sleep Outside | Product Detail</title>
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
-  <body>
-    <header><div class="wrap">
-      <a class="back" href="/index.html">&larr; Home</a>
-      <div class="logo"><img src="/images/icons/tents.svg" alt="logo" width="28" height="28"/><a href="/index.html">Sleep Outside</a></div>
-    </div></header>
 
-    <main class="wrap">
-      <a class="back" id="back-to-category" href="/product_listing/index.html">&larr; Back to products</a>
-      <section class="detail">
-        <div>
-          <img id="product-img" src="" alt="" loading="eager"/>
-        </div>
-        <div>
-          <h1 id="product-name"></h1>
-          <p class="price" id="product-price"></p>
-          <p id="product-description"></p>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sleep Outside | Cedar Ridge Rimrock 2-person tent</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <script src="../js/product.js" type="module"></script>
+  </head>
+
+  <body>
+    <header id="main-header" class="divider">
+    </header>
+
+    <main class="divider">
+      <section class="product-detail">
+        <h3>Cedar Ridge</h3>
+
+        <h2 class="divider">Rimrock Tent - 2-Person, 3-Season</h2>
+
+        <img
+          id="productImage"
+          class="divider"
+          src="../images/tents/cedar-ridge-rimrock-tent-2-person-3-season-in-rust-clay~p~344yj_01~320.jpg"
+          alt="Rimrock Tent - 2-Person, 3-Season"
+        />
+
+        <p id="productPrice" class="product-card__price">$69.99</p>
+
+        <p id="productColor" class="product__color">Rust/Clay</p>
+
+        <p id="productDescription" class="product__description">
+          Lightweight and ready for adventure, this Cedar Ridge Rimrock tent
+          boasts a weather-ready design that includes a tub-style floor and
+          factory-sealed rain fly
+        </p>
+
+        <div class="product-detail__add">
+          <button id="addToCart" data-id="344YJ">Add to Cart</button>
         </div>
       </section>
     </main>
 
-    <footer><div class="wrap">&copy; <span id="year"></span> Sleep Outside</div></footer>
-    <script type="module" src="/js/product.js"></script>
+    <footer id="main-footer">
+    </footer>
   </body>
 </html>

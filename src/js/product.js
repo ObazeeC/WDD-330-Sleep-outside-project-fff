@@ -1,21 +1,34 @@
-import ProductData from './ProductData.mjs'
-import { getParam } from './utils.mjs'
+import ProductData from "./ProductData.mjs";
+import { getParam } from "./utils.mjs";
+import ProductDetails from "./ProductDetails.mjs";
+import { loadHeaderFooter } from "./utils.mjs";
 
-const id = getParam('product')
-const category = getParam('category') || 'tents'
-const dataSource = new ProductData()
-const product = await dataSource.findProductById(id)
+const dataSource = new ProductData("tents");
+const productId = getParam("product");
 
-const nameEl = document.getElementById('product-name')
-const imgEl = document.getElementById('product-img')
-const priceEl = document.getElementById('product-price')
-const descEl = document.getElementById('product-description')
-const backLink = document.getElementById('back-to-category')
+const product = new ProductDetails(productId, dataSource);
+product.init();
 
-nameEl.textContent = product?.Name ?? 'Product'
-imgEl.src = product?.Images?.PrimaryLarge || product?.Images?.PrimaryMedium || ''
-imgEl.alt = product?.Name ?? 'Product image'
-priceEl.textContent = product?.FinalPrice ? `$${Number(product.FinalPrice).toFixed(2)}` : ''
-descEl.textContent = product?.Description ?? ''
+console.log("Product details initialized:", product);
 
-if (backLink) backLink.href = `/product_listing/index.html?category=${encodeURIComponent(category)}`
+loadHeaderFooter();
+
+//async function addToCartHandler(e) {
+// e?.preventDefault?.();
+// const id = e?.target?.dataset?.id;
+// if (!id) return console.warn('Missing data-id on Add to Cart button');
+
+// cart.push(item);
+//setLocalStorage("so-cart", cart);
+//}
+
+//async function addToCartHandler(e) {
+// console.log("Add to Cart button clicked", e);
+// e?.preventDefault?.();
+// const id = e?.target?.dataset?.id;
+// console.log("Product ID to add to cart:", id);
+// if (!id) return console.warn("Missing data-id on Add to Cart button");
+
+// document
+//  .getElementById('addToCart')
+//  ?.addEventListener('click', addToCartHandler);
